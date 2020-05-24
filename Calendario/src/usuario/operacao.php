@@ -9,19 +9,24 @@
     
     if(isset($_POST['entrar'])){
       echo "beleza";
+
+      
+      
       if(isset($_SESSION['users'])){
         echo "belezakr";
+
+        
         foreach($_SESSION['users'] as $use){
-          if($use->compara($_POST['usuario'],$_POST['password'])){
+           if($use->user == $_POST['usuario'] && $use->senha == md5($_POST['password']) ){
+             echo"ejtr09da";
               $_SESSION['user'] = $use;
-              $usuarioLogado = $use;
-              echo $use->$nome;
-          break; 
+              header('Location: ../calendario/index.html');
+            break; 
           }
         }
         echo "senha/usuario incorreto";
       }
-    
+     
   }
     
   if(isset($_POST['cadastrar'])){
@@ -42,7 +47,10 @@
       $user = new Usuario($_POST['nome'],$_POST['email'],$_POST['user'],md5($_POST['senha']));
       array_push($_SESSION['users'],$user);
       echo "usuario cadastrado";
-      echo $user->nome; 
+
+      foreach($_SESSION['users'] as $us){
+        echo $us->nome;
+      }
     }
   }else{
     echo 'deu nao pae';

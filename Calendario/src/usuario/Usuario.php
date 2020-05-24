@@ -1,7 +1,6 @@
 <?php
     class Usuario {
         private $nome;
-        private $sobrenome;
         private $email;
         private $user;
         private $senha;
@@ -23,7 +22,7 @@
         }
     
         public function compara(string $user,string $senha){
-            return $this->user == $user && $this->email =  $email &&  $this ->senha == $senha;
+            return $this->user == $user  &&  $this->senha == $senha;
         }
     }
 
