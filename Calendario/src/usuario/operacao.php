@@ -7,20 +7,14 @@
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
     
-    if(isset($_POST['entrar'])){
-      echo "beleza";
-
-      
-      
+    if(isset($_POST['entrar'])){  
       if(isset($_SESSION['users'])){
-        echo "belezakr";
-
         
         foreach($_SESSION['users'] as $use){
            if($use->user == $_POST['usuario'] && $use->senha == md5($_POST['password']) ){
              echo"ejtr09da";
               $_SESSION['user'] = $use;
-              header('Location: ../calendario/index.html');
+              header('Location: ../calendario/index.php?nome='.$_SESSION['user']->nome);
             break; 
           }
         }

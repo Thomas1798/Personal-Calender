@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +7,18 @@
   </head>
   <body>
     <form action="../usuario/operacao.php" method="POST">
-      <input type="text" name="nome" /> <br />
-      <input type="text" name="user" /> <br />
-      <input type="email" name="email" /> <br />
-      <input type="password" name="senha" id="senha" /> <br />
+      <input type="text" name="nome" placeholder="Nome" /> <br />
+      <input type="text" name="user" placeholder="Usuario" /> <br />
+      <input type="email" name="email" placeholder="Email" /> <br />
+      <input type="password" name="senha" id="senha" placeholder="Senha" />
+      <br />
+      <input
+        type="password"
+        name="confirma"
+        id="confirma"
+        placeholder="Confirme a senha"
+      />
+      <br />
       <button type="submit" name="cadastrar">Cadastrar</button>
     </form>
   </body>
