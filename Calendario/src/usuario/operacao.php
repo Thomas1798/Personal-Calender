@@ -31,8 +31,9 @@
       
       foreach($_SESSION['users'] as $users){
         if($users->user == $_POST['user'] || $users->email == $_POST['email'] ){
-            echo "usuario ja cadastrado";
+           // echo "usuario ja cadastrado";
             $cria = false;
+            header('Location: ../cadastro/falha.html');
 
         break;
         }
@@ -40,11 +41,8 @@
       if($cria==true){
       $user = new Usuario($_POST['nome'],$_POST['email'],$_POST['user'],md5($_POST['senha']));
       array_push($_SESSION['users'],$user);
-      echo "usuario cadastrado";
-
-      foreach($_SESSION['users'] as $us){
-        echo $us->nome;
-      }
+      //echo "usuario cadastrado";
+      header('Location: ../cadastro/sucesso.html');
     }
   }else{
     echo 'deu nao pae';
