@@ -37,6 +37,14 @@ body {
   border: 1px solid #bfc4c6;
   outline: none;
 }
+
+.dado ul #res{
+  text-align: left;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: -7%;
+}
+
 .dados:hover {
   background-color: #e0f1fc;
 }
